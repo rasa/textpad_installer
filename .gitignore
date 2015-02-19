@@ -1,0 +1,8 @@
+*.bak
+*.exe
+*.log
+*.zip
+*.html
+/www.textpad.com
+/nsis
+
