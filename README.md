@@ -1,6 +1,6 @@
 # textpad_installer
 
-textpad_installer lets you download and install TextPad, and many of the
+textpad_installer downloads and installs TextPad, and many of the
 freeware add-ons available at http://www.textpad.com/add-ons/.
 
 textpad_installer looks in the directory where textpad_installer.exe is for
