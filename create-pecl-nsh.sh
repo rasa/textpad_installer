@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copyright (c) 2005-2015 Ross Smith II (http://smithii.com). MIT Licensed.
 

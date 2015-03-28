@@ -201,9 +201,11 @@ SectionEnd
 	DetailPrint "Unzipping $2 to ${UNZIP_DIR}"
 
 !ifdef NOEXTRACTPATH
-	nsisunz::UnzipToLog /noextractpath $2 "${UNZIP_DIR}"
+	nsUnzip::Extract /j $2 "/d=${UNZIP_DIR}" /END
+	#nsisunz::UnzipToLog /noextractpath $2 "${UNZIP_DIR}"
 !else
-	nsisunz::UnzipToLog $2 "${UNZIP_DIR}"
+	nsUnzip::Extract $2 "/d=${UNZIP_DIR}" /END
+	#nsisunz::UnzipToLog $2 "${UNZIP_DIR}"
 !endif # NOEXTRACTPATH
 
 	Pop $0

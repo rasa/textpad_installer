@@ -37,6 +37,31 @@ Options:
            5: None
 ````
 
+## Verify a Release
+
+To verify a release, download the .zip, .sha256, and .asc files for the release 
+(replacing textpad_installer-7.4.0.1-win32.zip with the release you are verifying):
+
+````
+$ wget https://github.com/rasa/textpad_installer/releases/download/v7.4.0.1/textpad_installer-7.4.0.1-win32.zip{,.sha256,.asc}
+````
+
+Next, check that sha256sum reports "OK":
+````
+$ sha256sum -c textpad_installer-7.4.0.1-win32.zip.sha256
+textpad_installer-7.4.0.1-win32.zip: OK
+````
+
+Lastly, check that GPG reports "Good signature":
+
+````
+$ gpg --keyserver hkps.pool.sks-keyservers.net --recv-key 0x105a5225b6ab4b22
+$ gpg --verify textpad_installer-7.4.0.1-win32.zip.asc textpad_installer-7.4.0.1-win32.zip
+gpg:                using RSA key 0xFF914F74B4BB6EF3
+gpg: Good signature from "Ross Smith II <ross@smithii.com>" [ultimate]
+...
+````
+
 ## Contributing
 
 To contribute to this project, please see [CONTRIBUTING.md](CONTRIBUTING.md).
