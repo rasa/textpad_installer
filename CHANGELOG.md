@@ -1,3 +1,7 @@
+## 7.4.0.2 (12-Apr-2015)
+
+  * Update Inetc NSIS plugin to 1.0.4.4
+
 ## 7.4.0.1 (27-Mar-2015)
 
   * Removed dependencies on Nsisunz plugin
