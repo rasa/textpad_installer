@@ -1,3 +1,9 @@
+## 7.5.0 (20-May-2015)
+
+  * Upgrade TextPad to 7.5.0
+  * Remove UPX compression
+  * Update Makefile
+  
 ## 7.4.0.2 (12-Apr-2015)
 
   * Update Inetc NSIS plugin to 1.0.4.4
