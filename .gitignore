@@ -1,8 +1,7 @@
-syntax: glob
+/www.textpad.com/
+/nsis/
 
 # <https://raw.githubusercontent.com/dotnet/corefx/0e336c3a1646973abff97d18e422caeb7220e3da/.gitignore>
-
-syntax: glob
 
 ### VisualStudio ###
 

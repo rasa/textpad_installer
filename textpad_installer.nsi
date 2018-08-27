@@ -1,9 +1,9 @@
-# Copyright (c) 2005-2015 Ross Smith II (http://smithii.com). MIT Licensed.
+# Copyright (c) 2005-2018 Ross Smith II (http://smithii.com). MIT Licensed.
 
-!define TEXTPAD_VER 7.5.0
-!define TEXTPAD_EXE "TextPad 7.msi"
-!define TEXTPAD32_URL http://www.textpad.com/download/v74/win32/txpeng740-32.zip
-!define TEXTPAD64_URL http://www.textpad.com/download/v74/x64/txpeng740-64.zip
+!define TEXTPAD_VER 8.1.2
+!define TEXTPAD_EXE "TextPad 8.msi"
+!define TEXTPAD32_URL https://www.textpad.com/download/v81/win32/txpeng812-32.zip
+!define TEXTPAD64_URL https://www.textpad.com/download/v81/x64/txpeng812-64.zip
 
 !define PRODUCT_NAME "textpad_installer"
 #!define PRODUCT_VERSION "1.0"

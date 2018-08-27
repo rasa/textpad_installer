@@ -1,4 +1,4 @@
-# Copyright (c) 2002-2015, Ross Smith II. MIT licensed.
+# Copyright (c) 2002-2018, Ross Smith II. MIT licensed.
 
 APP_FILES+=license.txt
 

@@ -1,3 +1,7 @@
+## 8.1.2 (27-Aug-2018)
+
+  * Upgrade TextPad to 8.1.2
+
 ## 7.5.0 (20-May-2015)
 
   * Upgrade TextPad to 7.5.0

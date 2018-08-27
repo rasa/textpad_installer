@@ -1,8 +1,13 @@
 <?php
 
-# Copyright (c) 2005-2015 Ross Smith II (http://smithii.com). MIT Licensed.
+# Copyright (c) 2005-2018 Ross Smith II (http://smithii.com). MIT Licensed.
 
 /*
+
+Depends:
+php_tidy extension enabled
+7z.exe in path
+exetype.exe in path
 
 todo if $ext <> zip then use
 downloadGUIEXE
@@ -17,7 +22,7 @@ $root = '.';
 $dir = $root . '/www.textpad.com';
 $dest_root = $root . '/nsis';
 $scandir = $dir . $subdir;
-$scandir = '.';
+#$scandir = '.';
 
 $files = array();
 
@@ -38,9 +43,11 @@ function dump_nodes($file, $node) {
     global $dest_dir;
     global $skip;
 
-    if (!$node->hasChildren())
+    if (!$node->hasChildren()) {
+        # printf("no children for %s", $file);
         return;
-
+    }
+    
     foreach ($node->child as $child) {
         if (isset($child->id) && $child->id == TIDY_TAG_A) {
             $url = @$child->attribute['href'];
@@ -185,7 +192,7 @@ foreach($files as $key => $hash) {
             die(sprintf("Cannot copy '%s' to '%s': %s", $zip, $dst, @$phperror_msg));
         }
     } else {
-        $cmd = sprintf('C:/Progra~1/7-Zip/7z.exe x -y -o"%s" "%s"', $dest_dir, $zip);
+        $cmd = sprintf('7z.exe x -y -o"%s" "%s"', $dest_dir, $zip);
         exec($cmd, $output, $rv);
         if ($rv <> 0) {
             fprintf(STDERR, "Error %d executing '%s':\n", $rv, $cmd);
@@ -242,7 +249,7 @@ foreach($files as $key => $hash) {
         $md5s[$md5] = $exe;
         $exebase = basename($exe);
 
-        $cmd = 'exetype -q ' . $exe;
+        $cmd = 'exetype.exe -q ' . $exe;
         exec($cmd, $output, $exetype);
 
         $cmd = sprintf('sigcheck.exe "%s"', $exe);

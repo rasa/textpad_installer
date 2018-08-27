@@ -1,4 +1,4 @@
-# Copyright (c) 2002-2015, Ross Smith II. MIT licensed.
+# Copyright (c) 2002-2018, Ross Smith II. MIT licensed.
 
 ## dependencies:
 ## Cygwin
@@ -137,19 +137,19 @@ SIGNED_FILES=
 
 define SIGN_FILE
 
-$(2): $(1) $(CODESIGN_PFX)
-	test -d $(dir $(2)) || mkdir $(dir $(2))
-	for try in 1 2 3 4 5 6 7 8 9 10; do \
-		"$(SIGNTOOL)" verify /pa /q $(1) &>/dev/null && break ;\
-		"$(SIGNTOOL)" sign \
-			/d "$(3)" \
-			/du "$(4)" \
-			/f "$(CODESIGN_PFX)" \
-			/q \
-			/t "$(TIMESTAMP_URL)" \
-			$(1) ;\
-		sleep $$$$(( 2 ** $$$${try} )) ;\
-	done
+$(2): $(1) # $(CODESIGN_PFX)
+	# test -d $(dir $(2)) || mkdir $(dir $(2))
+	# for try in 1 2 3 4 5 6 7 8 9 10; do \
+	# 	"$(SIGNTOOL)" verify /pa /q $(1) &>/dev/null && break ;\
+	# 	"$(SIGNTOOL)" sign \
+	# 		/d "$(3)" \
+	# 		/du "$(4)" \
+	# 		/f "$(CODESIGN_PFX)" \
+	# 		/q \
+	# 		/t "$(TIMESTAMP_URL)" \
+	# 		$(1) ;\
+	# 	sleep $$$$(( 2 ** $$$${try} )) ;\
+	# done
 	cp $(1) $(2)
 
 SIGNED_FILES+=$(2)
