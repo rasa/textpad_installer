@@ -40,25 +40,23 @@ Options:
 ## Verify a Release
 
 To verify a release, download the .zip, .sha256, and .asc files for the release 
-(replacing textpad_installer-7.4.0.1-win32.zip with the release you are verifying):
+(replacing textpad_installer-8.1.2-win32.zip with the release you are verifying):
 
 ````
-$ wget https://github.com/rasa/textpad_installer/releases/download/v7.4.0.1/textpad_installer-7.4.0.1-win32.zip{,.sha256,.asc}
+$ wget --content-disposition https://github.com/rasa/textpad_installer/releases/download/v8.1.2/textpad_installer-8.1.2-win32.zip{,.sha256,.asc}
 ````
 
 Next, check that sha256sum reports "OK":
 ````
-$ sha256sum -c textpad_installer-7.4.0.1-win32.zip.sha256
-textpad_installer-7.4.0.1-win32.zip: OK
+$ sha256sum -c textpad_installer-8.1.2-win32.zip.sha256
+textpad_installer-8.1.2-win32.zip: OK
 ````
 
 Lastly, check that GPG reports "Good signature":
 
 ````
-$ gpg --keyserver hkps.pool.sks-keyservers.net --recv-key 0x105a5225b6ab4b22
-$ gpg --verify textpad_installer-7.4.0.1-win32.zip.asc textpad_installer-7.4.0.1-win32.zip
-gpg:                using RSA key 0xFF914F74B4BB6EF3
-gpg: Good signature from "Ross Smith II <ross@smithii.com>" [ultimate]
+$ gpg --keyserver do.random.io --recv-key 0x520AB290F6197CDC
+$ gpg --verify textpad_installer-8.1.2-win32.zip.asc textpad_installer-8.1.2-win32.zip
 ...
 ````
 
@@ -80,13 +78,10 @@ This project is [MIT licensed](LICENSE).
 
 ## Contact
 
-This project was created and is maintained by [Ross Smith II][] [![endorse][endorse_png]][endorse]
+This project was created and is maintained by [Ross Smith II][]
 
 Feedback, suggestions, and enhancements are welcome.
 
 [Ross Smith II]: mailto:ross@smithii.com "ross@smithii.com"
 [flatter]: https://flattr.com/submit/auto?user_id=rasa&url=https%3A%2F%2Fgithub.com%2Frasa%2Ftextpad_installer
 [flatter_png]: http://button.flattr.com/flattr-badge-large.png "Flattr this"
-[endorse]: https://coderwall.com/rasa
-[endorse_png]: https://api.coderwall.com/rasa/endorsecount.png "endorse"
-
